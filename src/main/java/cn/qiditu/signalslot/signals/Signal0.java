@@ -3,17 +3,17 @@ package cn.qiditu.signalslot.signals;
 import cn.qiditu.signalslot.Signal;
 import cn.qiditu.signalslot.slots.Slot0;
 import cn.qiditu.signalslot.Slot;
-import com.sun.istack.internal.NotNull;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.ref.WeakReference;
 
 abstract class BaseSignal0 extends Signal {
 
-    public BaseSignal0(@NotNull Object sender) {
+    BaseSignal0(@NotNull Object sender) {
         super(sender);
     }
 
-    public BaseSignal0(@NotNull WeakReference<Object> sender) {
+    BaseSignal0(@NotNull WeakReference<Object> sender) {
         super(sender);
     }
 
@@ -80,10 +80,12 @@ abstract class BaseSignal0 extends Signal {
  */
 public class Signal0 extends BaseSignal0 {
 
+    @SuppressWarnings("unused")
     public Signal0(@NotNull Object sender) {
         super(sender);
     }
 
+    @SuppressWarnings("unused")
     public Signal0(@NotNull WeakReference<Object> sender) {
         super(sender);
     }

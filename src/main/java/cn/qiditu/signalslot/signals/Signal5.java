@@ -3,24 +3,27 @@ package cn.qiditu.signalslot.signals;
 import cn.qiditu.signalslot.Slot;
 import cn.qiditu.signalslot.Signal;
 import cn.qiditu.signalslot.slots.Slot5;
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.ref.WeakReference;
 
 abstract class BaseSignal5<T, U, V, W, X> extends BaseSignal4<T, U, V, W> {
 
+    @SuppressWarnings("WeakerAccess")
     public BaseSignal5(@NotNull Object sender) {
         super(sender);
     }
 
-    public BaseSignal5(@NotNull WeakReference sender) {
+    @SuppressWarnings("WeakerAccess")
+    public BaseSignal5(@NotNull WeakReference<Object> sender) {
         super(sender);
     }
 
     /**
      * @see Signal#connect(Signal)
      */
+    @SuppressWarnings("unchecked")
     public Slot5<T, U, V, W, X> connect(@NotNull final Signal5<T, U, V, W, X> signal) {
         return (Slot5<T, U, V, W, X>)super.connect(signal);
     }
@@ -28,6 +31,7 @@ abstract class BaseSignal5<T, U, V, W, X> extends BaseSignal4<T, U, V, W> {
     /**
      * @see Signal#connect(Signal, int)
      */
+    @SuppressWarnings("unchecked")
     public Slot5<T, U, V, W, X> connect(@NotNull final Signal5<T, U, V, W, X> signal,
                                      int count) {
         return (Slot5<T, U, V, W, X>)super.connect(signal, count);
@@ -89,11 +93,13 @@ abstract class BaseSignal5<T, U, V, W, X> extends BaseSignal4<T, U, V, W> {
  */
 public class Signal5<T, U, V, W, X> extends BaseSignal5<T, U, V, W, X> {
 
+    @SuppressWarnings("unused")
     public Signal5(@NotNull Object sender) {
         super(sender);
     }
 
-    public Signal5(@NotNull WeakReference sender) {
+    @SuppressWarnings("unused")
+    public Signal5(@NotNull WeakReference<Object> sender) {
         super(sender);
     }
 

@@ -1,8 +1,8 @@
 package cn.qiditu.signalslot.slots;
 
 import cn.qiditu.signalslot.Slot;
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A slot with 3 generic arguments.

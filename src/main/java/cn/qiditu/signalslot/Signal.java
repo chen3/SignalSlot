@@ -1,7 +1,7 @@
 package cn.qiditu.signalslot;
 
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
@@ -51,6 +51,7 @@ public abstract class Signal {
      * Enables the signalslot.
      * @see #disable()
      */
+    @SuppressWarnings({"WeakerAccess", "unused"})
     public void enable() {
         enabled.set(true);
     }
@@ -60,10 +61,12 @@ public abstract class Signal {
      * slots.
      * @see #enable()
      */
+    @SuppressWarnings({"WeakerAccess", "unused"})
     public void disable() {
         enabled.set(false);
     }
 
+    @SuppressWarnings({"WeakerAccess", "unused"})
     public void setEnabled(boolean enable) {
         enabled.set(enable);
     }
@@ -73,6 +76,7 @@ public abstract class Signal {
      * operation and may result in a non-empty slot queue if one of the
      * 'connect' methods is used concurrently.
      */
+    @SuppressWarnings("WeakerAccess")
     public synchronized void clear() {
         direct.clear();
     }
@@ -80,6 +84,7 @@ public abstract class Signal {
     /**
      * @see #clear()
      */
+    @SuppressWarnings("unused")
     public void disconnectAll() {
         clear();
     }
@@ -137,6 +142,7 @@ public abstract class Signal {
         synchronized (this) {   //cache slots data
             int size = direct.size();
             slots = new Data[direct.size()];
+            //noinspection SuspiciousSystemArraycopy
             System.arraycopy(direct.toArray(), 0, slots, 0, size);
         }
 
@@ -189,9 +195,11 @@ public abstract class Signal {
     protected static class Data {
         private final Slot slot;
         private int count;
+        @SuppressWarnings("unused")
         public Data(@NotNull Slot slot) {
             this(slot, -1);
         }
+        @SuppressWarnings("WeakerAccess")
         public Data(@NotNull Slot slot, int count) {
             this.slot = slot;
             this.count = count;

@@ -3,24 +3,27 @@ package cn.qiditu.signalslot.signals;
 import cn.qiditu.signalslot.Slot;
 import cn.qiditu.signalslot.Signal;
 import cn.qiditu.signalslot.slots.Slot7;
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.ref.WeakReference;
 
 abstract class BaseSignal7<T, U, V, W, X, Y, Z> extends BaseSignal6<T, U, V, W, X, Y> {
 
+    @SuppressWarnings("WeakerAccess")
     public BaseSignal7(@NotNull Object sender) {
         super(sender);
     }
 
-    public BaseSignal7(@NotNull WeakReference sender) {
+    @SuppressWarnings("WeakerAccess")
+    public BaseSignal7(@NotNull WeakReference<Object> sender) {
         super(sender);
     }
 
     /**
      * @see Signal#connect(Signal)
      */
+    @SuppressWarnings("unchecked")
     public Slot7<T, U, V, W, X, Y, Z>
     connect(@NotNull final Signal7<T, U, V, W, X, Y, Z> signal) {
         return (Slot7<T, U, V, W, X, Y, Z>)super.connect(signal);
@@ -29,6 +32,7 @@ abstract class BaseSignal7<T, U, V, W, X, Y, Z> extends BaseSignal6<T, U, V, W, 
     /**
      * @see Signal#connect(Signal, int)
      */
+    @SuppressWarnings("unchecked")
     public Slot7<T, U, V, W, X, Y, Z>
     connect(@NotNull final Signal7<T, U, V, W, X, Y, Z> signal, int count) {
         return (Slot7<T, U, V, W, X, Y, Z>)super.connect(signal, count);
@@ -95,11 +99,13 @@ abstract class BaseSignal7<T, U, V, W, X, Y, Z> extends BaseSignal6<T, U, V, W, 
  */
 public class Signal7<T, U, V, W, X, Y, Z> extends BaseSignal7<T, U, V, W, X, Y, Z> {
 
+    @SuppressWarnings("unused")
     public Signal7(@NotNull Object sender) {
         super(sender);
     }
 
-    public Signal7(@NotNull WeakReference sender) {
+    @SuppressWarnings("unused")
+    public Signal7(@NotNull WeakReference<Object> sender) {
         super(sender);
     }
 

@@ -1,7 +1,7 @@
 package cn.qiditu.signalslot.slots;
 
 import cn.qiditu.signalslot.Slot;
-import com.sun.istack.internal.NotNull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A slot with 0 arguments.
