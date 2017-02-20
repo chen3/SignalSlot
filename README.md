@@ -1,8 +1,10 @@
 # SignalSlot
 SignalSlot For Java
-[reference from](https://github.com/msteinbeck/sig4j)
+
+[reference from here](https://github.com/msteinbeck/sig4j)
 
 # Usage
+```
 <repositories>
     <repository>
         <id>SignalSlot</id>
@@ -17,3 +19,4 @@ SignalSlot For Java
         <version>1.0</version>
     </dependency>
 </dependencies>
+```
